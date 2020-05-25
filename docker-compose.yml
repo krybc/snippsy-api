@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+#  api:
+#    container_name: snippsy_api
+#    build: ./
+#    restart: always
+#    ports:
+#    - "3000:3000"
+  db:
+    container_name: snippsy_db
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_DB: snippsy
+      POSTGRES_USER: snippsy
+      POSTGRES_PASSWORD: snippsy
+    ports:
+      - "5432:5432"
