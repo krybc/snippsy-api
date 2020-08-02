@@ -1,0 +1,66 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateLabelInput {
+  name: String!
+  color: String!
+  starred: Boolean = false
+}
+
+input CreateSnippetInput {
+  name: String!
+  description: String!
+  content: String!
+  language: String!
+  starred: Boolean = false
+}
+
+input CreateUserInput {
+  firstName: String!
+  email: String!
+  password: String!
+}
+
+type Jwt {
+  accessToken: String!
+}
+
+type Label {
+  id: Int!
+  name: String!
+  color: String!
+  starred: Boolean!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type Mutation {
+  login(input: LoginInput!): Jwt!
+  createLabel(input: CreateLabelInput!): Label!
+  createUser(input: CreateUserInput!): User!
+  createSnippet(input: CreateSnippetInput!): Snippet!
+}
+
+type Query {
+  labels: [Label!]!
+  label(id: Float!): Label!
+  snippets: [Snippet!]!
+  snippet(id: Float!): Snippet!
+}
+
+type Snippet {
+  id: Int!
+  name: String!
+  starred: Boolean!
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  email: String!
+  password: String!
+}

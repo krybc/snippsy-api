@@ -1,4 +1,18 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "src",
+  "projects": {
+    "profiler": {
+      "type": "library",
+      "root": "libs/profiler",
+      "entryFile": "index",
+      "sourceRoot": "libs/profiler/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/profiler/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
 }
